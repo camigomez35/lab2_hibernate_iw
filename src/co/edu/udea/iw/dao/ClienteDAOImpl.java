@@ -20,7 +20,7 @@ import co.edu.udea.iw.dto.Cliente;
 import co.edu.udea.iw.util.MyException;
 
 /**
- * 
+ * CRUD Cliente
  * @author CamiGomez318
  * @version 1
  */
@@ -50,7 +50,9 @@ public class ClienteDAOImpl implements ClienteDAO {
 		List <Cliente> clientes = null; 
 		try {
 			session = HibernateSessionFactory.getInstance().getSession();
-			Criteria criteria = session.createCriteria(Cliente.class);
+			Criteria criteria = session.createCriteria(Cliente.class)
+					.add(Restrictions.eq("eliminado", 1));
+		
 			clientes = criteria.list();
 		} catch (HibernateException e) {
 			throw new MyException(e);
@@ -80,23 +82,6 @@ public class ClienteDAOImpl implements ClienteDAO {
 	}
 
 	@Override
-	public void eliminar(Cliente cliente) throws MyException {
-		Session session = null; 
-		try {
-			session = HibernateSessionFactory.getInstance().getSession();
-			Transaction tr = session.beginTransaction();
-			session.delete(cliente);
-			tr.commit();
-		} catch (HibernateException e) {
-			throw new MyException(e);
-		}finally{
-			if(session != null){
-				session.close();
-			}
-		}
-	}
-
-	@Override
 	public Cliente obtener(String cedula) throws MyException {
 		Cliente cliente = null;
 		Session session = null;
@@ -114,6 +99,5 @@ public class ClienteDAOImpl implements ClienteDAO {
 		}
 		return cliente;
 	}
-
 
 }

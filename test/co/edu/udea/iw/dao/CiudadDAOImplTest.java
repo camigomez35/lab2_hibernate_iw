@@ -12,6 +12,9 @@ import co.edu.udea.iw.util.MyException;
 
 public class CiudadDAOImplTest {
 
+	/*
+	 * Prueba para obtener todos las ciudades
+	 */
 	@Test
 	public void testObtener() {
 		List <Ciudad> ciudades = null;

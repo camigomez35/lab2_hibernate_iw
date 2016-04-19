@@ -1,6 +1,7 @@
 package co.edu.udea.iw.dto;
 
 import java.util.Date;
+import java.util.Set;
 
 /**
  *  
@@ -14,15 +15,19 @@ public class Cliente {
 	private String nombres;
 	private String apellidos;
 	private String email;
-	private String UsuarioCrea;
+	private Cliente UsuarioCrea;
 	private Date fechaCreacion;
-	private String usuarioModifica;
+	private Cliente usuarioModifica;
 	private Date fechaModificacion;
 	private boolean eliminado;
-	private String usuarioElimina;
+	private Cliente usuarioElimina;
 	private Date fechaEliminacion;
+	private Set<Direccion> direccion;
 	
-	//Getters and Setters
+	
+	/*
+	 * Metodos getters and Setters
+	 */
 	public String getCedula() {
 		return cedula;
 	}
@@ -47,10 +52,10 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getUsuarioCrea() {
+	public Cliente getUsuarioCrea() {
 		return UsuarioCrea;
 	}
-	public void setUsuarioCrea(String usuarioCrea) {
+	public void setUsuarioCrea(Cliente usuarioCrea) {
 		UsuarioCrea = usuarioCrea;
 	}
 	public Date getFechaCreacion() {
@@ -59,10 +64,10 @@ public class Cliente {
 	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-	public String getUsuarioModifica() {
+	public Cliente getUsuarioModifica() {
 		return usuarioModifica;
 	}
-	public void setUsuarioModifica(String usuarioModificaa) {
+	public void setUsuarioModifica(Cliente usuarioModificaa) {
 		this.usuarioModifica = usuarioModifica;
 	}
 	public Date getFechaModificacion() {
@@ -77,10 +82,10 @@ public class Cliente {
 	public void setEliminado(boolean eliminado) {
 		this.eliminado = eliminado;
 	}
-	public String getUsuarioElimina() {
+	public Cliente getUsuarioElimina() {
 		return usuarioElimina;
 	}
-	public void setUsuarioElimina(String usuarioElimina) {
+	public void setUsuarioElimina(Cliente usuarioElimina) {
 		this.usuarioElimina = usuarioElimina;
 	}
 	public Date getFechaEliminacion() {
@@ -88,6 +93,12 @@ public class Cliente {
 	}
 	public void setFechaEliminacion(Date fechaEliminacion) {
 		this.fechaEliminacion = fechaEliminacion;
+	}
+	public Set<Direccion> getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(Set<Direccion> direccion) {
+		this.direccion = direccion;
 	}
 	
 	

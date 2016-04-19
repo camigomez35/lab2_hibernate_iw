@@ -11,7 +11,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
- * 
+ * Hibernate Session Factory
  * @author CamiGomez318
  * @version 1
  */

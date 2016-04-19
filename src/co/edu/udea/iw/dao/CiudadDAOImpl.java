@@ -19,7 +19,7 @@ import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.util.MyException;
 
 /**
- * 
+ * CRUD ciudad
  * @author CamiGomez318
  * @version 1
  */

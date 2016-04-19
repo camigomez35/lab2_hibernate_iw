@@ -5,7 +5,7 @@ import co.edu.udea.iw.dto.Ciudad;
 import co.edu.udea.iw.util.MyException;
 
 /**
- * CRUD
+ * Interface Ciudad
  * @author CamiGomez318
  * @version 1
  */

@@ -12,27 +12,17 @@ import co.edu.udea.iw.util.MyException;
 
 public class ClienteDAOImplTest {
 
+	/*
+	 * Prueba de inserción
+	 */
 	@Test
 	public void testInsertar() {
-		Date fechaCreacion = null;
-		ClienteDAO clienteDAO = null;
-		Cliente cliente = new Cliente();
-		cliente.setCedula("1152454724");
-		cliente.setNombres("Maria Camila");
-		cliente.setApellidos("Gomez Restrepo");
-		cliente.setEmail("camigomez35@gmail.com");
-		cliente.setUsuarioCrea("70124326");
-		cliente.setFechaCreacion(fechaCreacion);
-		
-		try {
-			clienteDAO = new ClienteDAOImpl();
-			clienteDAO.insertar(cliente);
-		} catch (MyException e) {
-			e.printStackTrace();
-			fail(e.getMessage());
-		}
+		fail("Not yet implemented");
 	}
 
+	/*
+	 * prueba para obtener todos los clientes
+	 */
 	@Test
 	public void testObtener() {
 		List <Cliente> clientes = null;
@@ -48,19 +38,40 @@ public class ClienteDAOImplTest {
 		}
 	}
 
+	/*
+	 * Prueba para modificar
+	 */
 	@Test
 	public void testModificar() {
 		fail("Not yet implemented");
 	}
 
+	/*
+	 * Prueba para eliminar
+	 */
 	@Test
 	public void testEliminar() {
 		fail("Not yet implemented");
 	}
 
+	/*
+	 * Prueba para obtener un cliente por su cedula
+	 */
 	@Test
 	public void testObtenerString() {
-		fail("Not yet implemented");
+		Cliente cliente = null;
+		ClienteDAO clienteDAO = null;
+		try {
+			clienteDAO = new ClienteDAOImpl();
+			cliente= clienteDAO.obtener("1152454724");
+			
+			System.out.println("Cliente: " + cliente.getNombres());
+			assertNotNull(cliente);
+			
+		} catch (MyException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 	}
 
 }
